@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Team } from '../team';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-team',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamComponent implements OnInit {
 
-  constructor() { }
+  teams!: Team[];
+  selectedTeam!: Team;
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.getAFLTeams();
   }
 
+  onSelect(team: Team): void {
+    this.selectedTeam = team;
+  }
+
+  getAFLTeams(): void {
+    this.dataService.getTeams().subscribe(temp => { this.teams = temp; });
+  }
 }

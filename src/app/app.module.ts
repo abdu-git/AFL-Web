@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ViewLeagueTableComponent } from './view-league-table/view-league-table.component';
 import { TeamComponent } from './team/team.component';
+import { TeamResultComponent } from './team-result/team-result.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewLeagueTableComponent,
-    TeamComponent
+    TeamComponent,
+    TeamResultComponent
   ],
   imports: [
     BrowserModule,

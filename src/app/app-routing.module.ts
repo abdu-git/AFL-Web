@@ -8,12 +8,8 @@ const routes: Routes = [
   { path: 'Team', component: TeamComponent}
 ];
 
-
-// const routes: Routes = [];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes),
-    RouterModule
   ],
   exports: [RouterModule]
 })
