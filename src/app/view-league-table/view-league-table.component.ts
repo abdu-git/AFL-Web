@@ -31,8 +31,25 @@ export class ViewLeagueTableComponent implements OnInit {
   }
 
   getGames(): void {
-    this.dataService.getGames().subscribe(temp => { this.games = temp; });
+    this.dataService.getGames().subscribe(temp => { 
+      var tempArr: Game[] = [];
+
+      // loop through the raw data array to find games where the home team won
+      // logic: hteam == winner from the Game model we get from the transformed API data
+      
+      temp.forEach((element) => {
+        if(element.hteam == element.winner) {tempArr.push(element);}
+      });
+      
+      this.games = tempArr;  
+          
+    });
   }
+
+
+  // getGames(): void {
+  //   this.dataService.getGames().subscribe(temp => { this.games = temp; });
+  // }
 
   getTips(): void {
     this.dataService.getTips().subscribe(temp => { this.tips = temp; });
