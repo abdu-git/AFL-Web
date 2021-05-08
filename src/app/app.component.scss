@@ -1,0 +1,10 @@
+$primary: #595cae;
+
+.nav-item .nav-link{
+    color: white;
+    padding: 1em;
+
+        &:hover {
+                    background: darken($primary, $amount: 10%);
+                }
+}
