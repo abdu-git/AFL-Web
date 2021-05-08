@@ -1,8 +1,9 @@
 export class Team {
     constructor(
-        public id:number ,
-		public name:string , 
-		public logo:string ,
-        public abbrev:string  
+		public id:number = 0,
+		public name:string = '', 
+		public logo:string = '',
+        public abbrev:string = ''
 	){}
+
 }
