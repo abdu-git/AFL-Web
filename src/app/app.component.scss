@@ -1,10 +1,31 @@
-$primary: #595cae;
-
-.nav-item .nav-link{
+// $primary: #595cae;
+$primary: #071e3d;
+.navbar{
+    background: $primary;
+    padding: 0.5rem 8rem;
+}
+.navbar-brand{
+    color: white;
+    font-weight: 700;
+}
+// .navbar-brand img{
+    
+//     height: 100px;
+//     width: 100px;
+  
+// }
+#navbarNav > ul > li:nth-child(n) > a{
     color: white;
     padding: 1em;
 
         &:hover {
                     background: darken($primary, $amount: 10%);
                 }
+}
+#navbarNav > button{
+    background:rgb(46, 156, 46);
+    border-color: $primary;
+    font-weight: 700;
+    padding: 0.4rem 1.4rem;
+    border-radius: 30px;
 }
