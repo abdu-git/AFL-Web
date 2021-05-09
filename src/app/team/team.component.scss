@@ -1,0 +1,25 @@
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    li{
+        background: rgb(238, 238, 238);
+        //background:lightgrey;
+        padding: 1em;
+        margin-right: 10px;
+        width: 200px;
+        height: 200px;
+        margin-bottom: 1em;
+        display: flex;
+        flex-wrap: wrap;
+        //flex-direction: column;
+        text-align: center;
+    }
+    li > *{
+        flex: 1 1 10em;
+
+
+    }
+}

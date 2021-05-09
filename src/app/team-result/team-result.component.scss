@@ -15,11 +15,12 @@
             //background:lightgrey;
             padding: 1em;
             margin-right: 10px;
-            width: 40%;
-            height: 300px;
+            width: 600px;
+            height: 200px;
             margin-bottom: 1em;
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
+            //flex-direction: column;
             text-align: center;
             .homeT{
                 color: green;
@@ -27,7 +28,13 @@
             .awayT{
                 color: red;
             }
+            .score{
+                color: royalblue;
+            }
           
+        }
+        li > *{
+            flex: 1 1 10em;
         }
     
     }
