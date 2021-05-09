@@ -26,7 +26,7 @@ export class DataService {
 
   }
   getGames(): Observable<Game[]> {
-    return this.http.get('https://api.squiggle.com.au/?q=games;').pipe(
+    return this.http.get('https://api.squiggle.com.au/?q=games;year=2021;').pipe(
       map((data: any) => data.games.map((item: any) => new Game(
 
         item.is_grand_final,
@@ -57,7 +57,7 @@ export class DataService {
     )
   }
   getTips(): Observable<Tip[]> {
-    return this.http.get('https://api.squiggle.com.au/?q=tips;year=2019;round=20').pipe(
+    return this.http.get('https://api.squiggle.com.au/?q=tips;year=2021;round=20').pipe(
       map((data: any) => data.tips.map((item: any) => new Tip(
 
         item.tip,
