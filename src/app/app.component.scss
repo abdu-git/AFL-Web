@@ -29,3 +29,9 @@ $primary: #071e3d;
     padding: 0.4rem 1.4rem;
     border-radius: 30px;
 }
+@media screen and (max-width:988px) {
+    .navbar{
+        padding: 1rem;
+    }
+    
+}
