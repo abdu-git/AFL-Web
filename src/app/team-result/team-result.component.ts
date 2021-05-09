@@ -35,4 +35,5 @@ export class TeamResultComponent implements OnInit {
       this.games = tempArr;    
     });
   }
+  
 }

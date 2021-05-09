@@ -1,4 +1,23 @@
-<div>
+<div class="container">
+    
+    <ul *ngIf = "team">
+        <!-- <li>
+            <p>Home Team</p>
+            <p>Away Team</p>
+            <p>Score</p>
+            <p>Winner</p>
+        </li>
+         -->
+        <li *ngFor ="let game of games">
+            <p class="homeT"><strong> Home Team</strong> <br>{{game.hteam}}</p>
+            <p class="score"><strong> Score </strong><br>{{game.hscore}}-{{game.ascore}}</p>
+            <p class="awayT"><strong> Away Team</strong> <br>{{game.ateam}}</p>
+            <p class="winT"><strong> Winner </strong><br>{{game.winner}}</p>
+        </li>
+    </ul>
+</div>
+
+<!-- <div>
     <div *ngIf = "team">
         <table sytle = "text-align: center;">
             <tr>
@@ -16,4 +35,4 @@
             </tr>
         </table>
     </div>
-</div>
+</div> -->
