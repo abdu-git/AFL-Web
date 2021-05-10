@@ -1,13 +1,21 @@
 <!-- games results -->
-<div class="container">
-    
+<!-- <div class="container">   
     <div class="row" *ngIf = "team">
-        <div id="result" class="col-sm-6 mr-2 mb-2" *ngFor ="let game of games">
+        <div id="result" class="col-sm-6 mr-2 mb-2" *ngFor ="let game of games | slice:0:4;">
             <p><strong> Home Team</strong> <br>{{game.hteam}}</p>
             <p><strong> Score </strong><br>{{game.hscore}}-{{game.ascore}}</p>
             <p><strong> Away Team</strong> <br>{{game.ateam}}</p>
             <br>
             <p><strong> Winner </strong><br>{{game.winner}}</p>
+        </div>
+    </div>
+</div> -->
+
+<!-- venues -->
+<div class="container">   
+    <div class="row" *ngIf = "team">
+        <div id="result" class="col-sm-6 mr-2 mb-2" *ngFor ="let game of games">
+            <p><strong>Venue</strong> <br>{{game.venue}}</p>
         </div>
     </div>
 </div>

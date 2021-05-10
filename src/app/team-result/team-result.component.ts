@@ -60,20 +60,6 @@ export class TeamResultComponent implements OnInit {
   
   // shows games played this season
 
-  getGames(): void {
-    this.dataService.getGames().subscribe(temp => { 
-      var tempArr: Game[] = [];
-
-      temp.forEach(element => {
-        if(element.complete == 100) tempArr.push(element);
-      });
-      
-      this.games = tempArr;    
-    });
-  }
-
-  // shows next games
-
   // getGames(): void {
   //   this.dataService.getGames().subscribe(temp => { 
   //     var tempArr: Game[] = [];
@@ -85,6 +71,33 @@ export class TeamResultComponent implements OnInit {
   //     this.games = tempArr;    
   //   });
   // }
+
+  // shows next games
+
+  // getGames(): void {
+  //   this.dataService.getGames().subscribe(temp => { 
+  //     var tempArr: Game[] = [];
+
+  //     temp.forEach(element => {
+  //       if(element.complete !== 100) tempArr.push(element);
+  //     });
+      
+  //     this.games = tempArr;    
+  //   });
+  // }
+
+  // get won games
+  getGames(): void {
+    this.dataService.getGames().subscribe(temp => { 
+      var tempArr: Game[] = [];
+
+      temp.forEach(element => {
+        if(element.winnerteamid == this.team.id) tempArr.push(element);
+      });
+      
+      this.games = tempArr;    
+    });
+  }
 
 
 
