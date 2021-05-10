@@ -11,6 +11,29 @@
     </div>
 </div>
 
+<div class="container" *ngIf = "team">
+    <table class="table text-center">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col" >Home Team</th>
+                <th scope="col" >Away Team</th>
+                <th scope="col" >Tip</th>
+                <th scope="col" >Source</th>
+            </tr>
+        </thead>
+
+        <tr *ngFor="let t of tips">
+            <td>{{t.hteam}}</td>
+            <td>{{t.ateam}}</td>
+            <td>{{t.tip}}</td>
+            <td>{{t.source}}</td>
+        </tr>
+    </table>
+    <br><br>
+</div>
+
+
+
 <!-- <div class="container text-center">
     <h2>Teams</h2> 
     <div class="row">
