@@ -1,38 +1,22 @@
 <div class="container">
     
-    <ul *ngIf = "team">
-        <!-- <li>
-            <p>Home Team</p>
-            <p>Away Team</p>
-            <p>Score</p>
-            <p>Winner</p>
-        </li>
-         -->
-        <li *ngFor ="let game of games">
-            <p class="homeT"><strong> Home Team</strong> <br>{{game.hteam}}</p>
-            <p class="score"><strong> Score </strong><br>{{game.hscore}}-{{game.ascore}}</p>
-            <p class="awayT"><strong> Away Team</strong> <br>{{game.ateam}}</p>
-            <p class="winT"><strong> Winner </strong><br>{{game.winner}}</p>
-        </li>
-    </ul>
+    <div class="row" *ngIf = "team">
+        <div id="result" class="col-sm-6 mr-2 mb-2" *ngFor ="let game of games">
+            <p><strong> Home Team</strong> <br>{{game.hteam}}</p>
+            <p><strong> Score </strong><br>{{game.hscore}}-{{game.ascore}}</p>
+            <p><strong> Away Team</strong> <br>{{game.ateam}}</p>
+            <br>
+            <p><strong> Winner </strong><br>{{game.winner}}</p>
+        </div>
+    </div>
 </div>
 
-<!-- <div>
-    <div *ngIf = "team">
-        <table sytle = "text-align: center;">
-            <tr>
-                <th>Home Team</th>
-                <th>Away Team</th>
-                <th>Score</th>
-                <th>Winner</th>
-            </tr>
-
-            <tr *ngFor ="let game of games">
-                <td>{{game.hteam}}</td>
-                <td>{{game.ateam}}</td>
-                <td>{{game.hscore}}-{{game.ascore}}</td>
-                <td>{{game.winner}}</td>
-            </tr>
-        </table>
+<!-- <div class="container text-center">
+    <h2>Teams</h2> 
+    <div class="row">
+        <div id="teamE" class="col-sm-2 mr-2 mb-2" *ngFor="let team of teams" (click)="onSelect(team)">
+            <img src="https://squiggle.com.au/{{team.logo}}">
+        </div>
     </div>
+<app-team-result [team]="selectedTeam"></app-team-result>
 </div> -->

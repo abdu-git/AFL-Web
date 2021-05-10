@@ -1,50 +1,63 @@
-#TeamDiv{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    li{
-        background: #eeeeee;
-        padding: 1em;
-        margin-right: 10px;
-        margin-left: 10px;
-        width: 200px;
-        height: 200px;
-        margin-bottom: 1em;
-        display: flex;
-        // flex-direction: column;
-        flex-wrap: wrap;
-        text-align: center;
-        &:hover {
-            background: darken(#eeeeee, $amount: 10%);
-        }
-        }
-        li > *{
-            flex: 1 1 100%;
+#teamE{
+    background: #eeeeee;
+    &:hover {
+                background: darken(#eeeeee, $amount: 10%);
             }
-            // #TeamDiv > ul > li:nth-child(1){
-            // content: "";
-            // position: absolute;
-            // bottom: 0;
-            // left: 0;
-            // height: .4rem;
-            // width: 100%;
-            // transform: scaleX(0);
-            // background-color: #ee001b;
-            // transition: transform .25s ease;
-            // }
-        p{
-            font-weight: bold;
-                font-size: 1.2rem;
-        }    
+
+}
+img{
+    width: 150px;
+    height: 150px;
+}
+
+
+// div{
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-content: center;
+//     text-align: center;
+//     ul{
+//     list-style-type: none;
+//     margin: 0;
+//     padding: 0;
+//     display: flex;
+//     flex-wrap: wrap;
+//     li{
+//         background: #eeeeee;
+//         padding: 1em;
+//         margin-right: 10px;
+//         margin-left: 10px;
+//         width: 200px;
+//         height: 200px;
+//         margin-bottom: 1em;
+//         display: flex;
+//         // flex-direction: column;
+//         flex-wrap: wrap;
+//         text-align: center;
+//         &:hover {
+//             background: darken(#eeeeee, $amount: 10%);
+//         }
+//         }
+//         li > *{
+//             flex: 1 1 100%;
+//             }
+//             #TeamDiv > ul > li:nth-child(1){
+//             content: "";
+//             position: absolute;
+//             bottom: 0;
+//             left: 0;
+//             height: .4rem;
+//             width: 100%;
+//             transform: scaleX(0);
+//             background-color: #ee001b;
+//             transition: transform .25s ease;
+//             }
+//         p{
+//             font-weight: bold;
+//                 font-size: 1.2rem;
+//         }    
     
 
-    }
-}
+//     }
+// }

@@ -1,10 +1,10 @@
-<div class="container">
-    <ul>
-        <li *ngFor="let team of teams">
-            <p class="name">{{team.name}}</p>
-            <p class="logo"><img src="https://squiggle.com.au/{{team.logo}}"></p>
-            </li>
-    </ul>
+<div class="container text-center">
+    <div class="row">
+        <div id="team" class="col-md-3 mr-2 mt-2" *ngFor="let team of teams">
+            <p>{{team.name}}</p>
+            <p><img src="https://squiggle.com.au/{{team.logo}}"></p>
+        </div>
+    </div>
 </div>
 
 
@@ -45,6 +45,19 @@
 </div> -->
 
 <!--Tips for a round of games-->
+<!-- <div class="container">
+    <div class="row">
+        <div id="tipE" class="col-md-3 mr-2 mt-2" *ngFor ="let t of tips">
+            <p><strong> Home Team</strong>{{t.hteam}}</p>
+            <p><strong> Away Team</strong>{{t.ateam}}</p>
+            <p><strong> Tip</strong>{{t.tip}}</p>
+            <p><strong> source</strong>{{t.source}}</p>
+        </div>
+    </div>
+</div> -->
+
+
+
 <div>
     <table style="text-align:center;">
         <tr>

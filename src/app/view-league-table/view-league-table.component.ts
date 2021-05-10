@@ -76,5 +76,4 @@ export class ViewLeagueTableComponent implements OnInit {
     this.dataService.getTips().subscribe(temp => { this.tips = temp; });
   }
 
-
 }

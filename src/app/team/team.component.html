@@ -1,14 +1,11 @@
 <!--Teams list-->
-<div id="TeamDiv">
-    <h2>My Teams</h2>
-    <ul>
-        <li class="items" *ngFor="let team of teams" (click)="onSelect(team)">
-            <span>{{team.id}} </span>
-           <!-- <div class="logoS"> -->
-               <p>{{team.name}} </p>
-                <p><img src="https://squiggle.com.au/{{team.logo}}"></p>
-            <!-- </div> -->
-        </li>
-    </ul>
+<!--  <div clas="TeamDiv text-center"> -->
+<div class="container text-center">
+        <h2>Teams</h2> 
+        <div class="row">
+            <div id="teamE" class="col-sm-2 mr-2 mb-2" *ngFor="let team of teams" (click)="onSelect(team)">
+                <img src="https://squiggle.com.au/{{team.logo}}">
+            </div>
+        </div>
     <app-team-result [team]="selectedTeam"></app-team-result>
 </div>
