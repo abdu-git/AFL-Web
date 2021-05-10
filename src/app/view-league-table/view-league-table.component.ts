@@ -35,11 +35,6 @@ export class ViewLeagueTableComponent implements OnInit {
     this.dataService.getGames().subscribe(temp => { this.games = temp; });
   }*/
 
-  /*
-   * Get games from the API
-   * Filter the results to only get results where the home team won
-  */
-  
   getGames(): void {
     this.dataService.getGames().subscribe(temp => { 
       var tempArr: Game[] = [];

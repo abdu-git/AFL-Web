@@ -14,17 +14,17 @@ export class TeamResultComponent implements OnInit {
 
   games!:Game[];
   tips!: Tip[];
-  @Input() team!: Team;
   // @Input() team!: Team;
+  @Input() team!: Team;
   constructor(private dataService: DataService) { }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes['team']) {
-      this.getTips();
-    }
     // if (changes['team']) {
-    //   this.getGames();
+    //   this.getTips();
     // }
+    if (changes['team']) {
+      this.getGames();
+    }
   }
 
   ngOnInit(): void {
@@ -43,17 +43,51 @@ export class TeamResultComponent implements OnInit {
       this.tips = tempArr;    
     });  
   }
+  
+  // gets all the games
+  
+  // getGames(): void {
+  //   this.dataService.getGames().subscribe(temp => { 
+  //     var tempArr: Game[] = [];
+
+  //     temp.forEach(element => {
+  //       if(element.hteamid == this.team.id || element.ateamid == this.team.id) tempArr.push(element);
+  //     });
+      
+  //     this.games = tempArr;    
+  //   });
+  // }
+  
+  // shows games played this season
 
   getGames(): void {
     this.dataService.getGames().subscribe(temp => { 
       var tempArr: Game[] = [];
 
       temp.forEach(element => {
-        if(element.hteamid == this.team.id || element.ateamid == this.team.id) tempArr.push(element);
+        if(element.complete == 100) tempArr.push(element);
       });
       
       this.games = tempArr;    
     });
   }
+
+  // shows next games
+
+  // getGames(): void {
+  //   this.dataService.getGames().subscribe(temp => { 
+  //     var tempArr: Game[] = [];
+
+  //     temp.forEach(element => {
+  //       if(element.complete == 100) tempArr.push(element);
+  //     });
+      
+  //     this.games = tempArr;    
+  //   });
+  // }
+
+
+
+  
   
 }
