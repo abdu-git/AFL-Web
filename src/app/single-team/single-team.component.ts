@@ -13,8 +13,10 @@ import { Tip } from '../tip';
 export class SingleTeamComponent implements OnInit {
 
   games!:Game[];
+  gamesUpp!:Game[];
+  gameswon!:Game[];
+  gamesPlayed!:Game[];
   tips!: Tip[];
-  // @Input() team!: Team;
   @Input() team!: Team;
   constructor(private dataService: DataService) { }
   name!:string;
@@ -28,6 +30,15 @@ export class SingleTeamComponent implements OnInit {
     }
     if (changes['team']) {
       this.getGames();
+    }
+    if (changes['team']) {
+      this.getGamesWon();
+    }
+    if (changes['team']) {
+      this.getGamesPlayed();
+    }
+    if (changes['team']) {
+      this.getGamesUpp();
     }
   }
   ngOnInit(): void {
@@ -45,7 +56,21 @@ export class SingleTeamComponent implements OnInit {
     });  
   }
 
+  // all games
   getGames(): void {
+    this.dataService.getGames().subscribe(temp => { 
+      var tempArr: Game[] = [];
+
+      temp.forEach(element => {
+        if(element.hteamid == this.team.id || element.ateamid == this.team.id) tempArr.push(element);
+      });
+      
+      this.games = tempArr;    
+    });
+  }
+
+   // get won games
+   getGamesWon(): void {
     this.dataService.getGames().subscribe(temp => { 
       var tempArr: Game[] = [];
 
@@ -53,9 +78,36 @@ export class SingleTeamComponent implements OnInit {
         if(element.winnerteamid == this.team.id) tempArr.push(element);
       });
       
-      this.games = tempArr;    
+      this.gameswon = tempArr;    
     });
   }
 
+  //shows games played this season
+
+  getGamesPlayed(): void {
+    this.dataService.getGames().subscribe(temp => { 
+      var tempArr: Game[] = [];
+
+      temp.forEach(element => {
+        if((element.hteamid == this.team.id || element.ateamid == this.team.id) && 
+        element.complete == 100) tempArr.push(element);
+      });
+      
+      this.gamesPlayed = tempArr;    
+    });
+  }
+  
+ getGamesUpp(): void {
+    this.dataService.getGames().subscribe(temp => { 
+      var tempArr: Game[] = [];
+
+      temp.forEach(element => {
+        if((element.hteamid == this.team.id || element.ateamid == this.team.id) && 
+          element.complete !== 100) tempArr.push(element);
+      });
+      
+      this.gamesUpp = tempArr;    
+    });
+  }
 
 }
