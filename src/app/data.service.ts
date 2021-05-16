@@ -85,15 +85,16 @@ export class DataService {
       )))
     )
   }
-  getLadder(): Observable<Ladder[]>{
-    return this.http.get('https://api.squiggle.com.au/?q=tips;year=2021;round=20').pipe(
-      map((data: any) => data.ladders.map((item: any) => new Ladder(
+  getLadder(): Observable<Ladder[]> {
+    return this.http.get('https://api.squiggle.com.au/?q=standings').pipe(
+      map((data: any) => data.tips.map((item: any) => new Ladder(
+
         item.rank,
         item.draws,
         item.played,
         item.against,
         item.percentage,
-        item.for,
+        item._for,
         item.pts,
         item.goals_for,
         item.wins,
@@ -103,6 +104,29 @@ export class DataService {
         item.losses,
         item.name,
         item.goals_against
-      }
-    }
+      )))
+    )
   }
+  // getLadder(): Observable<Ladder[]>{
+  //   return this.http.get('https://api.squiggle.com.au/?q=standings').pipe(
+  //     map((data: any) => data.ladders.map((item: any) => new Ladder(
+  //       item.rank,
+  //       item.draws,
+  //       item.played,
+  //       item.against,
+  //       item.percentage,
+  //       item.for,
+  //       item.pts,
+  //       item.goals_for,
+  //       item.wins,
+  //       item.behinds_against,
+  //       item.id,
+  //       item.behinds_for,
+  //       item.losses,
+  //       item.name
+  //       // item.goals_against
+  //     )))
+  //     }
+  //   }
+  // }
+}
