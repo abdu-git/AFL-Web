@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ViewLeagueTableComponent } from './view-league-table/view-league-table.component';
 import { TeamComponent } from './team/team.component';
 import { TeamResultComponent } from './team-result/team-result.component';
+import { SingleTeamComponent } from './single-team/single-team.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewLeagueTableComponent,
     TeamComponent,
-    TeamResultComponent
+    TeamResultComponent,
+    SingleTeamComponent
   ],
   imports: [
     BrowserModule,
