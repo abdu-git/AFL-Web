@@ -1,1 +1,48 @@
-<p>single-team works!</p>
+<div class="container" *ngIf = "team" >
+      <img src="https://squiggle.com.au/{{team.logo}}" width="50" height="50" class="d-inline-block align-top" alt=""> {{team.name}}     
+</div>
+<div class="btn-group btn-group-lg" role="group" aria-label="Basic example" *ngIf="team">
+    <button type="button" class="btn btn-secondary">Left</button>
+    <button type="button" class="btn btn-secondary">Middle</button>
+    <button type="button" class="btn btn-secondary">Right</button>
+    <button type="button" class="btn btn-secondary">Right</button>
+</div>
+
+<!-- <nav class="navbar navbar-dark bg-dark" *ngIf = "team" >
+      <img src="https://squiggle.com.au/{{team.logo}}" width="30" height="30" class="d-inline-block align-top" alt="">
+      Bootstrap      
+</nav> -->
+
+
+<!-- <div class="row" *ngIf = "team">
+    <div class="col-4">
+      <div class="list-group" id="list-tab" role="tablist">
+        <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
+        <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
+        <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
+        <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
+      </div>
+    </div>
+    <div class="col-8">
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>
+        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
+        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
+        <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
+      </div>
+    </div>
+  </div> -->
+
+
+<!-- games results -->
+<div class="container">   
+    <div class="row" *ngIf = "team">
+        <div id="result" class="col-sm-6 mr-2 mb-2" *ngFor ="let game of games | slice:0:4;">
+            <p><strong> Home Team</strong> <br>{{game.hteam}}</p>
+            <p><strong> Score </strong><br>{{game.hscore}}-{{game.ascore}}</p>
+            <p><strong> Away Team</strong> <br>{{game.ateam}}</p>
+            <br>
+            <p><strong> Winner </strong><br>{{game.winner}}</p>
+        </div>
+    </div>
+</div>

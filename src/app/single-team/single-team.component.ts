@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Team } from '../team';
+import { DataService } from '../data.service';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Game } from '../game';
+import { Tip } from '../tip';
+
 
 @Component({
   selector: 'app-single-team',
@@ -7,9 +12,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingleTeamComponent implements OnInit {
 
-  constructor() { }
+  games!:Game[];
+  tips!: Tip[];
+  // @Input() team!: Team;
+  @Input() team!: Team;
+  constructor(private dataService: DataService) { }
 
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['team']) {
+      this.getTips();
+    }
+    if (changes['team']) {
+      this.getGames();
+    }
+  }
   ngOnInit(): void {
   }
+
+  getTips(): void {
+    this.dataService.getTips().subscribe(temp => { 
+      var tempArr: Tip[] = [];
+
+      temp.forEach(element => {
+        if(element.hteamid == this.team.id || element.ateamid == this.team.id) tempArr.push(element);
+      });
+      
+      this.tips = tempArr;    
+    });  
+  }
+
+  getGames(): void {
+    this.dataService.getGames().subscribe(temp => { 
+      var tempArr: Game[] = [];
+
+      temp.forEach(element => {
+        if(element.winnerteamid == this.team.id) tempArr.push(element);
+      });
+      
+      this.games = tempArr;    
+    });
+  }
+
 
 }
