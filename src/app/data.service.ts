@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Team } from './team';
 import { Tip } from './tip';
 import { Game } from './game';
+import { Ladder } from './ladder'
 
 
 @Injectable({
@@ -84,4 +85,24 @@ export class DataService {
       )))
     )
   }
-}
+  getLadder(): Observable<Ladder[]>{
+    return this.http.get('https://api.squiggle.com.au/?q=tips;year=2021;round=20').pipe(
+      map((data: any) => data.ladders.map((item: any) => new Ladder(
+        item.rank,
+        item.draws,
+        item.played,
+        item.against,
+        item.percentage,
+        item.for,
+        item.pts,
+        item.goals_for,
+        item.wins,
+        item.behinds_against,
+        item.id,
+        item.behinds_for,
+        item.losses,
+        item.name,
+        item.goals_against
+      }
+    }
+  }
