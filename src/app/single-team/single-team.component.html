@@ -1,7 +1,7 @@
-<div class="container" *ngIf = "team" >
+<div class="container-md" *ngIf = "team" >
       <img src="https://squiggle.com.au/{{team.logo}}" width="50" height="50" class="d-inline-block align-top" alt=""> {{team.name}}     
 </div>
-<div class="btn-group btn-group-lg" role="group" aria-label="Basic example" *ngIf="team">
+<div class="btn-group btn-group" role="group" aria-label="Basic example" *ngIf="team">
     <div class="btn-group" role="group">
         <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Results
@@ -12,20 +12,21 @@
           <a class="dropdown-item" (click)="getName('played')" >Games Played</a>
         </div>
       </div>
-    <button (click)="getName('mool')" type="button" class="btn btn-secondary">upcomming</button>
+    <button (click)="getName('uppcomin')" type="button" class="btn btn-secondary">upcomming</button>
     <button (click)="getName('prediction')" type="button" class="btn btn-secondary">prediction</button>
-    <button (click)="getName('left')" type="button" class="btn btn-secondary">rival</button>
+    <button (click)="getName('rival')" type="button" class="btn btn-secondary">rival</button>
 </div>
 
 <!-- all games -->
 <div class="container">   
     <div class="row" *ngIf = "name=='all'">
-        <div id="result" class="col-sm-6 mr-2 mb-2" *ngFor ="let game of games">
-            <p><strong> Home Team</strong> <br>{{game.hteam}}</p>
+        <div id="result" class="col-sm-12 mt-2 mr-2 mb-2" *ngFor ="let game of games">
+            <p><strong>Home Team</strong><strong> Away Team</strong> <br>
+                {{game.hteam}}{{game.ateam}}</p>
             <p><strong> Score </strong><br>{{game.hscore}}-{{game.ascore}}</p>
-            <p><strong> Away Team</strong> <br>{{game.ateam}}</p>
             <br>
-            <p><strong> Winner </strong><br>{{game.winner}}</p>
+            <p><strong>Winner </strong><br>{{game.winner}}</p>
+            <p><strong>Venue</strong> <br>{{game.venue}}</p>
         </div>
     </div>
 </div>
@@ -39,6 +40,8 @@
             <p><strong> Away Team</strong> <br>{{game.ateam}}</p>
             <br>
             <p><strong> Winner </strong><br>{{game.winner}}</p>
+            <p><strong>Venue</strong> <br>{{game.venue}}</p>
+
         </div>
     </div>
 </div>
@@ -46,36 +49,30 @@
 <!-- played only -->
 <div class="container">   
     <div class="row" *ngIf = "name=='played'">
-        <div id="result" class="col-sm-6 mr-2 mb-2" *ngFor ="let game of gamesPlayed">
+        <div id="result" class="col-sm-12 mr-2 mb-2" *ngFor ="let game of gamesPlayed">
             <p><strong> Home Team</strong> <br>{{game.hteam}}</p>
             <p><strong> Score </strong><br>{{game.hscore}}-{{game.ascore}}</p>
             <p><strong> Away Team</strong> <br>{{game.ateam}}</p>
             <br>
             <p><strong> Winner </strong><br>{{game.winner}}</p>
+            <p><strong>Venue</strong> <br>{{game.venue}}</p>
         </div>
     </div>
 </div>
 
 <!-- next games -->
 <div class="container">   
-    <div class="row" *ngIf = "name=='mool'">
-        <div id="result" class="col-sm-6 mr-2 mb-2" *ngFor ="let game of gamesUpp | slice:0:4;">
+    <div class="row" *ngIf = "name=='uppcomin'">
+        <div id="result" class="col-sm-12 mr-2 mb-2" *ngFor ="let game of gamesUpp | slice:0:4;">
             <p><strong> Home Team</strong> <br>{{game.hteam}}</p>
             <p><strong> Score </strong><br>{{game.hscore}}-{{game.ascore}}</p>
             <p><strong> Away Team</strong> <br>{{game.ateam}}</p>
             <br>
             <p><strong> Winner </strong><br>{{game.winner}}</p>
-        </div>
-    </div>
-</div>
-<!-- venues -->
-<!-- <div class="container">   
-    <div class="row" *ngIf = "name=='prediction'">
-        <div id="result" class="col-sm-6 mr-2 mb-2" *ngFor ="let game of games">
             <p><strong>Venue</strong> <br>{{game.venue}}</p>
         </div>
     </div>
-</div> -->
+</div>
 
 <!-- prediction -->
 <div class="container" *ngIf = "name=='prediction'">
@@ -99,5 +96,18 @@
     <br><br>
 </div>
 
+<!-- rival -->
+<div class="container">   
+    <div class="row" *ngIf = "name=='rival'">
+        <div id="result" class="col-sm-12 mr-2 mb-2" *ngFor ="let game of games | slice:0:1;">
+            <p><strong> Home Team</strong> <br>{{game.hteam}}</p>
+            <p><strong> Score </strong><br>{{game.hscore}}-{{game.ascore}}</p>
+            <p><strong> Away Team</strong> <br>{{game.ateam}}</p>
+            <br>
+            <p><strong> Winner </strong><br>{{game.winner}}</p>
+            <p><strong>Venue</strong> <br>{{game.venue}}</p>
+        </div>
+    </div>
+</div>
 
 
