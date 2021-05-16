@@ -1,26 +1,33 @@
-#teamUL{
-    padding-left: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    display: flex;
-    width: auto;
-    list-style: none;
-    justify-content: center;
-    align-items: center;
-    height: 6.2rem;
-    flex-wrap: nowrap;
-    #logo{
-        background: lightgray;
-        flex: 1;
-        position: relative;
-        // width: 100%;
-        img{
-            height: 100%;
-            width: 100%;
-        }
-    }
+#teamE{
+    background: #eeeeee;
+    &:hover {
+                background: darken(#eeeeee, $amount: 10%);
+            }
+
 }
 
+// #teamUL{
+//     padding-left: 0;
+//     margin-top: 0;
+//     margin-bottom: 0;
+//     display: flex;
+//     width: auto;
+//     list-style: none;
+//     justify-content: center;
+//     align-items: center;
+//     height: 6.2rem;
+//     flex-wrap: nowrap;
+//     // #logo{
+//     //     background: lightgray;
+//     //     flex: 1;
+//     //     position: relative;
+//     //     // width: 100%;
+//         #logoImg{
+//             height: 100%;
+//             width: 100%;
+//         }
+    
+// }
 
 // .container{
 //     justify-content: center;
