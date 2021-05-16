@@ -17,6 +17,10 @@ export class SingleTeamComponent implements OnInit {
   // @Input() team!: Team;
   @Input() team!: Team;
   constructor(private dataService: DataService) { }
+  name!:string;
+  getName(x:string): void {
+    this.name=x;
+  }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['team']) {

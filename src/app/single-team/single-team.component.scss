@@ -1,4 +1,7 @@
-$primary: #071e3d;
+// $primary: #071e3d;
+// $primary:rgb(46, 156, 46);
+$primary:black;
+
 
 
 
@@ -6,4 +9,7 @@ $primary: #071e3d;
     background-color: $primary;
     color: white;
     
+}
+#result{
+    background-color: lightslategray;
 }

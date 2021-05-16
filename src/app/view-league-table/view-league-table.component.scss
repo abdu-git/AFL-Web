@@ -1,5 +1,6 @@
 #teamE{
     background: #eeeeee;
+    border-radius: 20%;
     &:hover {
                 background: darken(#eeeeee, $amount: 10%);
             }
