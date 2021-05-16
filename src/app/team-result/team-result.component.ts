@@ -19,9 +19,9 @@ export class TeamResultComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnChanges(changes: SimpleChanges) {
-    // if (changes['team']) {
-    //   this.getTips();
-    // }
+    if (changes['team']) {
+      this.getTips();
+    }
     if (changes['team']) {
       this.getGames();
     }

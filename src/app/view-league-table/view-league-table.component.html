@@ -1,11 +1,33 @@
-<div class="container text-center">
+<!-- <div id="oopp" class="container text-center">
+    <div class="row">
+        <div class="col-sm-1" *ngFor="let team of teams" (click)="onSelect(team)">
+            <img class="mw-100" src="https://squiggle.com.au/{{team.logo}}" alt="Max-width 100%">
+        </div>
+    </div>
+    <app-team-result [team]="selectedTeam"></app-team-result>
+</div> -->
+<div class="wrapp">
+    <nav id="teamNav">
+        <ul id="teamUL">
+            <li id="logo" *ngFor="let team of teams" (click)="onSelect(team)">
+                <img src="https://squiggle.com.au/{{team.logo}}">
+            </li>
+        </ul>
+    </nav>
+</div>
+
+
+
+
+
+<!-- <div class="container text-center">
     <div class="row">
         <div id="team" class="col-md-3 mr-2 mt-2" *ngFor="let team of teams">
             <p>{{team.name}}</p>
             <p><img src="https://squiggle.com.au/{{team.logo}}"></p>
         </div>
     </div>
-</div>
+</div> -->
 
 
 <!--Teams list-->
@@ -58,7 +80,7 @@
 
 
 
-<div>
+<!-- <div>
     <table style="text-align:center;">
         <tr>
             <th>Home Team</th>
@@ -75,4 +97,4 @@
         </tr>
     </table>
     <br><br>
-</div>
+</div> -->

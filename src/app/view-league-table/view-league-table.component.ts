@@ -17,13 +17,17 @@ export class ViewLeagueTableComponent implements OnInit {
   teams!: Team[];
   tips!: Tip[];
   games!: Game[];
+  selectedTeam!: Team;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
     this.getAFLTeams();
-    this.getGames();
-    this.getTips();
+    // this.getGames();
+    // this.getTips();
+  }
+  onSelect(team: Team): void {
+    this.selectedTeam = team;
   }
 
   getAFLTeams(): void {
@@ -35,40 +39,40 @@ export class ViewLeagueTableComponent implements OnInit {
     this.dataService.getGames().subscribe(temp => { this.games = temp; });
   }*/
 
-  getGames(): void {
-    this.dataService.getGames().subscribe(temp => { 
-      var tempArr: Game[] = [];
+  // getGames(): void {
+  //   this.dataService.getGames().subscribe(temp => { 
+  //     var tempArr: Game[] = [];
 
-      // loop through the raw data array to find games where the home team won
-      // logic: hteam == winner from the Game model we get from the transformed API data
+  //     // loop through the raw data array to find games where the home team won
+  //     // logic: hteam == winner from the Game model we get from the transformed API data
       
-      temp.forEach(element => {
-        if(element.hteam == element.winner) tempArr.push(element);
-      });
+  //     temp.forEach(element => {
+  //       if(element.hteam == element.winner) tempArr.push(element);
+  //     });
       
-      this.games = tempArr;  
+  //     this.games = tempArr;  
 
-      // Sort the games array based on the highest score by the winning team
-      this.games.sort(this.compareFunc);    
-    });
-  }
+  //     // Sort the games array based on the highest score by the winning team
+  //     this.games.sort(this.compareFunc);    
+  //   });
+  // }
 
-  compareFunc(a: Game, b: Game) {
-    const gameAScore = a.hscore;
-    const gameBScore = b.hscore;
+  // compareFunc(a: Game, b: Game) {
+  //   const gameAScore = a.hscore;
+  //   const gameBScore = b.hscore;
 
-    let compare = 0;
-    if (gameAScore < gameBScore) {
-      compare = 1;
-    } else if (gameAScore > gameBScore) {
-      compare = -1;
-    }
+  //   let compare = 0;
+  //   if (gameAScore < gameBScore) {
+  //     compare = 1;
+  //   } else if (gameAScore > gameBScore) {
+  //     compare = -1;
+  //   }
 
-    return compare;
-  }
+  //   return compare;
+  // }
 
-  getTips(): void {
-    this.dataService.getTips().subscribe(temp => { this.tips = temp; });
-  }
+  // getTips(): void {
+  //   this.dataService.getTips().subscribe(temp => { this.tips = temp; });
+  // }
 
 }

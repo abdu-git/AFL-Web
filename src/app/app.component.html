@@ -1,12 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand" href="#">AFL</a>
+  <a routerLink="/" class="nav-brand">
+    <img id="logoAfl" src="https://1000logos.net/wp-content/uploads/2018/07/AFL-Logo.png" alt="AL">
+  </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item active">
-            <a routerLink="/ViewLeagueTable" class="nav-link">Home</a>
+            <a routerLink="/" class="nav-link">Home</a>
         </li>
         <li class="nav-item">
             <a routerLink="/Team" class="nav-link">Team</a>
@@ -20,5 +22,6 @@
       </ul>
       <button class="btn text-light" type="submit">Sign Up</button>
     </div>
-  </nav>
-  <router-outlet></router-outlet>
+</nav>
+<app-view-league-table></app-view-league-table>
+<router-outlet></router-outlet>

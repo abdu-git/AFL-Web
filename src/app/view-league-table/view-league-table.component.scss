@@ -1,15 +1,39 @@
-.container{
+#teamUL{
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: flex;
+    width: auto;
+    list-style: none;
     justify-content: center;
-    align-content: center;
-    // text-align: center;
+    align-items: center;
+    height: 6.2rem;
+    flex-wrap: nowrap;
+    #logo{
+        background: lightgray;
+        flex: 1;
+        position: relative;
+        // width: 100%;
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    }
 }
-#team{
-    background: darken($color: #eeeeee, $amount: 10);
-}
-#tipE{
-    // display: flex;
-    background: darken($color: #eeeeee, $amount: 10);
-}
+
+
+// .container{
+//     justify-content: center;
+//     align-content: center;
+//     // text-align: center;
+// }
+// #team{
+//     background: darken($color: #eeeeee, $amount: 10);
+// }
+// #tipE{
+//     // display: flex;
+//     background: darken($color: #eeeeee, $amount: 10);
+// }
 
 //     ul{
 //         list-style-type: none;

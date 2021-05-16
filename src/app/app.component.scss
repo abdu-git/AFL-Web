@@ -4,15 +4,20 @@ $primary: #071e3d;
     background: $primary;
     padding: 0.5rem 8rem;
 }
-.navbar-brand{
-    color: white;
-    font-weight: 700;
+// .navbar-brand {
+//     position: relative;
+//     background: url("https://1000logos.net/wp-content/uploads/2018/07/AFL-Logo.png");
+//     width: 170px;
+//     left: 15px;
+//     background-size: contain;
+// }
+#logoAfl{
+    height: 5em;
+    width: 7em;    
 }
-// .navbar-brand img{
-    
-//     height: 100px;
-//     width: 100px;
-  
+// #navbarNav > a > img{
+//     height: 7em;
+//     width: 5em;
 // }
 #navbarNav > ul > li:nth-child(n) > a{
     color: white;
